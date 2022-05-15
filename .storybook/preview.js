@@ -1,4 +1,5 @@
-import { ThemeProvider, createGlobalStyle, css } from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, defaultTheme } from "../src/components/particles";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,18 +10,6 @@ export const parameters = {
     },
   },
 };
-
-const defaultTheme = {
-  primary: "rebeccapurple",
-};
-
-const GlobalStyles = createGlobalStyle`
-    ${({ theme }) => css`
-      body {
-        background-color: ${theme.primary};
-      }
-    `}
-`;
 
 export const decorators = [
   (Story) => (
