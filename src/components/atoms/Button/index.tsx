@@ -1,12 +1,13 @@
 // Packages
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
 type TButtonProps = {
   children: React.ReactNode;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement> | undefined) => void;
 };
 
-const Button: React.FC<TButtonProps> = ({ children }) => (
-  <button>{children}</button>
+const Button: React.FC<TButtonProps> = ({ children, onClick }) => (
+  <button onClick={onClick}>{children}</button>
 );
 
 export default Button;
