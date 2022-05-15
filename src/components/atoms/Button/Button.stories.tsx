@@ -12,16 +12,14 @@ const buttonAction = (e?: React.MouseEvent<HTMLButtonElement>) => {
   alert("Hello");
 };
 
-export const Default: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} />
-);
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const Default = Template.bind({});
 Default.args = {
   children: "Default text",
 };
 
-export const FunctionButton: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} />
-);
+export const FunctionButton = Template.bind({});
 FunctionButton.args = {
   children: "Function button",
   onClick: buttonAction,
