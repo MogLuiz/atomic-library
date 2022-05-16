@@ -1,15 +1,36 @@
 // Packages
-import React, { ButtonHTMLAttributes } from "react";
+import React from "react";
 
-type TButtonProps = {
+// Types
+import { TVariantColor } from "./types";
+
+// Styles
+import * as S from "./styles";
+
+export type TButtonProps = {
   children: React.ReactNode;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement> | undefined) => void;
   href?: string;
+  variantColor?: TVariantColor;
 };
 
-const Button: React.FC<TButtonProps> = ({ children, onClick, href }) => {
-  if (!href) return <button onClick={onClick}>{children}</button>;
-  return <a href={href}>{children}</a>;
+const Button: React.FC<TButtonProps> = ({
+  children,
+  onClick,
+  href,
+  variantColor = "primary",
+}) => {
+  if (!href)
+    return (
+      <S.StyledButton onClick={onClick} variantColor={variantColor}>
+        {children}
+      </S.StyledButton>
+    );
+  return (
+    <S.StyledLinkButton as="a" href={href} variantColor={variantColor}>
+      {children}
+    </S.StyledLinkButton>
+  );
 };
 
 export default Button;
