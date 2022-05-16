@@ -23,10 +23,12 @@ export const FunctionButton = Template.bind({});
 FunctionButton.args = {
   children: "Function button",
   onClick: buttonAction,
+  variantColor: "secondary",
 };
 
-export const LinkedButton = Template.bind({})
+export const LinkedButton = Template.bind({});
 LinkedButton.args = {
   children: "Linked Button",
-  href: "/route"
-}
+  href: "/route",
+  variantColor: "tertiary",
+};
