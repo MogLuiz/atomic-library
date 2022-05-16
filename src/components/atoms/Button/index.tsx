@@ -2,20 +2,21 @@
 import React from "react";
 
 // Utils
-import { renderIcon } from "./utils";
+import { renderIcon, IconsOptions } from "./utils";
 
 // Types
-import { TVariantColor, TIcon } from "./types";
+import { TVariantColor } from "./types";
 
 // Styles
 import * as S from "./styles";
+
 
 export type TButtonProps = {
   children: React.ReactNode;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement> | undefined) => void;
   href?: string;
   variantColor?: TVariantColor;
-  icon?: TIcon;
+  icon?: keyof typeof IconsOptions;
 };
 
 const Button: React.FC<TButtonProps> = ({
