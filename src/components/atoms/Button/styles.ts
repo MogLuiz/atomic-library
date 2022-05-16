@@ -22,7 +22,8 @@ export const StyledButton = styled.button<TStyledProps>`
   ${({ theme, variantColor }) => css`
     ${!!variantColor && ButtonModifiers[variantColor](theme)}
 
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 16px;
 
     border: none;
@@ -35,6 +36,11 @@ export const StyledButton = styled.button<TStyledProps>`
     text-decoration: none;
     transition: all 0.15s ease;
     white-space: nowrap;
+
+    .button__icon {
+      display: inline-block;
+      margin-right: 4px;
+    }
   `}
 `;
 
