@@ -32,3 +32,9 @@ LinkedButton.args = {
   href: "/route",
   variantColor: "tertiary",
 };
+
+export const IconButton = Template.bind({});
+IconButton.args = {
+  children: "Icon Button",
+  icon: "user",
+};
