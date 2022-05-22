@@ -1,3 +1,25 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { TNavigationProps } from "./Navigation";
 
-export const Wrapper = styled.div``;
+type TWrapperProps = Pick<TNavigationProps, "direction">;
+
+const NavigationModifiers = {
+  horizontal: () => css`
+    a + a {
+      margin-left: 24px;
+    }
+  `,
+  vertical: () => css`
+    flex-direction: column;
+    a + a {
+      margin-top: 24px;
+    }
+  `,
+};
+
+export const Wrapper = styled.div<TWrapperProps>`
+  ${({ direction }) => css`
+    display: flex;
+    ${!!direction && NavigationModifiers[direction]}
+  `}
+`;

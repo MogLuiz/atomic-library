@@ -9,13 +9,13 @@ type TLinkItem = {
   url: string;
 };
 
-type TNavigationProps = {
+export type TNavigationProps = {
   direction: "vertical" | "horizontal";
   links: TLinkItem[];
 };
 
 const Navigation = ({ direction, links }: TNavigationProps) => (
-  <S.Wrapper>
+  <S.Wrapper direction={direction}>
     {links.map(({ title, url }: TLinkItem) => (
       <a href={url}>{title}</a>
     ))}
