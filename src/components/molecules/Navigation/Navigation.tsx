@@ -10,16 +10,17 @@ type TLinkItem = {
 };
 
 type TNavigationProps = {
-  direction: string;
-  link: TLinkItem[];
+  direction: "vertical" | "horizontal";
+  links: TLinkItem[];
 };
 
-const Navigation = ({ direction, link }: TNavigationProps) => (
+const Navigation = ({ direction, links }: TNavigationProps) => (
   <S.Wrapper>
-    {link.map(({ title, url }: TLinkItem) => (
+    {links.map(({ title, url }: TLinkItem) => (
       <a href={url}>{title}</a>
     ))}
   </S.Wrapper>
 );
 
 export default Navigation;
+export type TLinkType = TLinkItem;
