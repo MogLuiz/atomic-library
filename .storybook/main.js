@@ -8,7 +8,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-actions"
+    "@storybook/addon-actions",
+    "storybook-addon-designs",
   ],
   framework: "@storybook/react",
   webpackFinal: (config) => {

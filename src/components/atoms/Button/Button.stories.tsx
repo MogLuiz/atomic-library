@@ -1,10 +1,12 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { withDesign } from 'storybook-addon-designs'
 
 import Button from ".";
 
 export default {
   component: Button,
   title: "Atoms/Button",
+  decorators: [withDesign],
 } as ComponentMeta<typeof Button>;
 
 const buttonAction = (e?: React.MouseEvent<HTMLButtonElement>) => {
@@ -18,6 +20,12 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Default text",
 };
+Default.parameters = {
+  design: {
+    type: "figma",
+    link: "https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File"
+  }
+}
 
 export const FunctionButton = Template.bind({});
 FunctionButton.args = {
