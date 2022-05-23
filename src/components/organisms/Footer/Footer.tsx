@@ -4,11 +4,16 @@ import { Navigation, TLinkItem, TNavigationProps } from "../../molecules";
 // Styles
 import * as S from "./styles";
 
+type TMenus = {
+  items: Array<{
+    title: string;
+    url: string;
+  }>;
+  title?: string;
+};
+
 type TFooterProps = {
-  menus: {
-    items: TLinkItem[];
-    title?: string;
-  }[];
+  menus: TMenus[];
 };
 
 const Footer = ({ menus }: TFooterProps) => (
@@ -42,4 +47,5 @@ const Footer = ({ menus }: TFooterProps) => (
   </S.Wrapper>
 );
 
+export type TFooterArrayType = TFooterProps;
 export default Footer;
