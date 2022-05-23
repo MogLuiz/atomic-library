@@ -4,7 +4,7 @@ import React from "react";
 // Styles
 import * as S from "./styles";
 
-type TLinkItem = {
+export type TLinkItem = {
   title: string;
   url: string;
 };

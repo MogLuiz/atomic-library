@@ -17,7 +17,7 @@ const NavigationModifiers = {
   `,
 };
 
-export const Wrapper = styled.div<TWrapperProps>`
+export const Wrapper = styled.nav<TWrapperProps>`
   ${({ direction }) => css`
     display: flex;
     ${!!direction && NavigationModifiers[direction]}
